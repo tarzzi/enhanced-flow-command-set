@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.15.0",
+    "version": "1.19.0",
     "libraryName": "doc-enhanced-flow-trigger",
     "libraryId": "5DA1DC8B-F9A4-43D4-9A0B-C2E89E2D5FBE",
     "environment": "spo",
@@ -12,6 +12,11 @@
     "skipFeatureDeployment": false,
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "ListViewCommandSet"
+    "extensionType": "ListViewCommandSet",
+    "nodeVersion": "18.20.3",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.12.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

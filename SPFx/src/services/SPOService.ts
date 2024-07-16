@@ -3,7 +3,7 @@ import { IDropdownOption } from "@fluentui/react";
 import { ServiceKey } from "@microsoft/sp-core-library";
 import { Logger } from "@pnp/logging";
 import { SPFI } from "@pnp/sp";
-import * as AppSettings from "AppSettings";
+// import * as AppSettings from "AppSettings";
 import { getSP } from "../middleware";
 import { IRequestedUserInput, isTriggerConfigValid, ITriggerConfig, SupportedInputTypes } from "../models";
 
@@ -18,7 +18,9 @@ export class SPOService implements ISPOService {
 
   public constructor() {
     this._sp = getSP();
-    this._configListTitle = AppSettings.ConfigListTitle
+    // this._configListTitle = AppSettings.ConfigListTitle
+    this._configListTitle = "Enhanced Flow Trigger Configuration"
+ 
   }
 
   /**
@@ -42,7 +44,8 @@ export class SPOService implements ISPOService {
         throw new Error("Trigger config list title is invalid.");
       }
 
-      const flowLimit: number = AppSettings.FlowButtonDisplayLimit;
+      // const flowLimit: number = AppSettings.FlowButtonDisplayLimit;
+      const flowLimit: number = 25;
 
       return await this._sp.web.lists
         .getByTitle(this._configListTitle)

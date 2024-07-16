@@ -112,7 +112,7 @@ export const FlowInputForm: React.FC<IFlowInputFormProps> = (
   * @param newValue The new value of the input field after the change.
   * @param newValueIsEmpty Whether the new value of the input field is empty.
   */
-  const handleOnChangeInputFieldValue = (inputFieldName: string, event, newValue, newValueIsEmpty: boolean): void => {
+  const handleOnChangeInputFieldValue = (inputFieldName: string, event: any, newValue: any, newValueIsEmpty: boolean): void => {
     try {
       // Set input field error message
       if (!newValue && newValueIsEmpty && selectedFlowTrigger.requestedUserInput.find((input: IRequestedUserInput) => input.name === inputFieldName).required) {
@@ -341,19 +341,19 @@ export const FlowInputForm: React.FC<IFlowInputFormProps> = (
   }
 
   /**
- * Parses the form input object state from a Map to a JSON object.
- */
-  const parseFormInput = (): object => {
+   * Parses the form input object state from a Map to a JSON object.
+   */
+  const parseFormInput = (): { [key: string]: string } => {
     try {
-      const formInputObject: object = {};
+      const formInputObject: { [key: string]: string } = {};
       formInput?.forEach((value, key) => {
         formInputObject[key] = value ? value : "";
       });
-
+  
       return formInputObject;
     } catch (err) {
       Logger.error(err);
-      return undefined;
+      return {};
     }
   }
 

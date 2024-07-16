@@ -6,6 +6,9 @@
   "description": "Trigger a Power Automate or Azure Logic Apps flow from SharePoint while selecting one or more items.",
   "author": "cup o'365",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
+  },
   "scripts": {
     "init": "npm i && gulp bundle --production && gulp trust-dev-cert && gulp serve --nobrowser",
     "run": "gulp bundle --production && gulp trust-dev-cert && gulp serve --nobrowser",
@@ -25,35 +28,39 @@
     "package-list-dev": "gulp switch-list-type --list list && gulp bundle --ship --development && gulp package-solution --ship"
   },
   "dependencies": {
-    "@fluentui/react": "^8.83.0",
+    "@fluentui/react": "8.106.4",
     "@fluentui/react-hooks": "^8.6.1",
-    "@microsoft/decorators": "1.15.0",
-    "@microsoft/sp-core-library": "1.15.0",
-    "@microsoft/sp-dialog": "1.15.0",
-    "@microsoft/sp-listview-extensibility": "1.15.0",
+    "@microsoft/decorators": "1.19.0",
+    "@microsoft/sp-adaptive-card-extension-base": "1.19.0",
+    "@microsoft/sp-core-library": "1.19.0",
+    "@microsoft/sp-dialog": "1.19.0",
+    "@microsoft/sp-listview-extensibility": "1.19.0",
     "@pnp/logging": "^3.5.1",
-    "@pnp/sp": "^3.5.1",
-    "@pnp/spfx-controls-react": "^3.10.1 || 3.9.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "@pnp/sp": "^4.2.0",
+    "@pnp/spfx-controls-react": "^4.0.0-beta.6059091",
+    "office-ui-fabric-react": "7.199.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "tslib": "2.3.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@microsoft/eslint-config-spfx": "1.15.0",
-    "@microsoft/eslint-plugin-spfx": "1.15.0",
+    "@microsoft/eslint-config-spfx": "1.20.1",
+    "@microsoft/eslint-plugin-spfx": "1.20.1",
     "@microsoft/rush-stack-compiler-4.5": "0.2.2",
-    "@microsoft/sp-build-web": "1.15.0",
-    "@microsoft/sp-module-interfaces": "1.15.0",
+    "@microsoft/rush-stack-compiler-4.7": "0.1.0",
+    "@microsoft/sp-build-web": "1.20.1",
+    "@microsoft/sp-module-interfaces": "1.20.1",
     "@rushstack/eslint-config": "2.5.1",
-    "@types/react": "16.9.51",
-    "@types/react-dom": "16.9.8",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
     "@types/uuid": "^8.3.4",
     "@types/webpack-env": "~1.15.2",
     "ajv": "^6.12.5",
     "dotenv": "^16.0.1",
     "dotenv-expand": "^8.0.3",
+    "eslint": "8.7.0",
     "gulp": "4.0.2",
-    "typescript": "4.5"
+    "typescript": "4.7.4"
   }
 }

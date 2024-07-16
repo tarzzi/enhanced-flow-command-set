@@ -21,7 +21,7 @@ export class DependenciesManager {
           this._serviceScope.whenFinished(() => {
             // Inject all the already known dependency references
             this._references.forEach(r => {
-              r.obj[r.property] = this._serviceScope.consume(r.serviceKey);
+              (r.obj as { [key: string]: any })[r.property] = this._serviceScope.consume(r.serviceKey);
             });
             this._references = [];
           });
@@ -33,7 +33,7 @@ export class DependenciesManager {
     });
   }
 
-  public inject<TService>(target: unknown, property: string, serviceKey: ServiceKey<TService>): void {
+  public inject<TService>(target: any, property: string, serviceKey: ServiceKey<TService>): void {
     if (this._serviceScope) {
       target[property] = this._serviceScope.consume(serviceKey);
     } else {
